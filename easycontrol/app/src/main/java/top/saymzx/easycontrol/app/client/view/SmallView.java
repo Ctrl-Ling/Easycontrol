@@ -186,7 +186,7 @@ public class SmallView extends ViewOutlineProvider {
             smallView.bar.setBackgroundTintList(ColorStateList.valueOf(AppData.main.getResources().getColor(R.color.clientBarSecond)));
           }
           // 拖动限制
-          if (x < statusBarHeight | y < statusBarHeight + 10 | x > measuredWidth.get() - statusBarHeight | y > measuredHeight.get()) return true;
+          if (x < 0 | y < statusBarHeight | x > measuredWidth.get() | y > measuredHeight.get()) return true;
           // 更新
           smallViewParams.x = paramsX.get() + flipX;
           smallViewParams.y = paramsY.get() + flipY;
