@@ -206,8 +206,11 @@ public class SmallView extends ViewOutlineProvider {
   public void calculateSite() {
     Pair<Integer, Integer> screenSize = new Pair<>(backgroundWindow.getMeasuredWidth(), backgroundWindow.getMeasuredHeight() + statusBarHeight);
     ViewGroup.LayoutParams layoutParams = clientView.textureView.getLayoutParams();
-    smallViewParams.x = (screenSize.first - layoutParams.width) / 2;
-    smallViewParams.y = (screenSize.second - layoutParams.height) / 2;
+    //smallViewParams.x = (screenSize.first - layoutParams.width) / 2;
+    //smallViewParams.y = (screenSize.second - layoutParams.height) / 2;
+    //默认左上角显示
+    smallViewParams.x = statusBarHeight;
+    smallViewParams.y = statusBarHeight*2;
     AppData.windowManager.updateViewLayout(smallView.getRoot(), smallViewParams);
   }
 
